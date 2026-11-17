@@ -14,7 +14,15 @@ class JeuService {
         } else if (v > 10) {
           pts = 10;
         }
-        String img = "assets/cartes/" + c + "_" + v.toString() + ".png";
+        String nomValeur = v.toString();
+        if (v == 11) {
+          nomValeur = "jack";
+        } else if (v == 12) {
+          nomValeur = "queen";
+        } else if (v == 13) {
+          nomValeur = "king";
+        }
+        String img = "assets/cartes/" + c + "_" + nomValeur + ".png";
         Carte carte = Carte(c, v, pts, img);
         paquet.add(carte);
       }
